@@ -126,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Construct WhatsApp Formatting String
             const whatsappNumber = "919645869686";
-            const whatsappText = `*New Website Inquiry!*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Interested In:* ${service}\n*Message:* ${message}`;
+            const currentDateTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: true });
+            const whatsappText = `🚀 *New Client Inquiry Alert*\n\nA new potential client has submitted a request through your website.\n\n👤 *Client Information*\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\n\n📌 *Service Requested*\n${service}\n\n💬 *Client Message*\n"${message}"\n\n📅 *Received At*\n${currentDateTime}\n\n---\n📞 Action Required: Contact the client promptly to follow up.`;
             
             // 2. Open WhatsApp immediately in a NEW background tab
             window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`, '_blank');
